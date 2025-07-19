@@ -25,3 +25,32 @@ body {
         padding: 0 !important;
     }
 }
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+}
+.dark-mode .navbar .navbar-brand {
+    color: #ff0000 !important;
+}
+.dark-mode .navbar .me-2 {
+    color: #ff0000 !important;
+}
+.dark-mode .nav-link,
+.dark-mode .btn {
+    color: #ffffff !important;
+}
+
+.dark-mode .btn-outline-dark {
+    border-color: #cccccc;
+}
+
+.dark-mode input {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-color: #555;
+}
