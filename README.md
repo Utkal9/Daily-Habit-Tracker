@@ -30,41 +30,52 @@
 ```
 
 TrackWise/
-│
-├── config/             # DB config and environment setup
-│   └── mongoose.js
-│
-├── controllers/        # Controller logic for routes
-│   ├── home\_controller.js
-│   ├── habits\_controller.js
-│   └── users\_controller.js
-│
-├── models/             # Mongoose schema/models
-│   ├── habit.js
-│   └── user.js
-│
-├── routes/             # Route definitions
-│   ├── index.js
-│   ├── habits.js
-│   └── users.js
-│
-├── views/              # EJS views/templates
-│   ├── home.ejs
-│   ├── login.ejs
-│   ├── register.ejs
-│   ├── details.ejs
-│   └── partials/
-│       ├── header.ejs
-│       └── footer.ejs
-│
-├── assets/             # Static files like CSS, JS, images
+├── assets/
 │   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── index.js            # Entry point of the server
+│   │   ├── details.css
+│   │   ├── home.css
+│   │   └── layout.css
+│   └── js/
+│       ├── details.js
+│       ├── home.js
+│       ├── layout.js
+│       └── moment.js
+├── config/
+│   └── mongoose.js
+├── controllers/
+│   ├── auth_controller.js
+│   ├── details_controller.js
+│   └── home_controller.js
+├── middlewares/
+│   └── auth.js
+├── models/
+│   ├── habits.js
+│   └── user.js
+├── node_modules/
+├── routes/
+│   ├── auth.js
+│   ├── details.js
+│   └── index.js
+├── screenshots/
+│   ├── CalenderView.png
+│   ├── Darkmode.png
+│   ├── Detailspage.png
+│   ├── Homepage.png
+│   ├── NewRegister.png
+│   └── Streakpage.png
+├── views/
+│   ├── details.ejs
+│   ├── home.ejs
+│   ├── layout.ejs
+│   ├── login.ejs
+│   └── register.ejs
+├── .env
+├── .gitignore
+├── index.js
+├── package-lock.json
 ├── package.json
 └── README.md
+
 
 ```
 
@@ -112,24 +123,33 @@ http://localhost:8000
 
 ## 📸 Screenshots
 
-Coming soon...
+### 🏠 Home Page
+
+![Home Page](./screenshots/Homepage.png)
+
+### 🔐 NewRegister Page
+
+![Login Page](./screenshots/NewRegister.png)
+
+### ➕ Add Habit
+
+![Add Habit](./screenshots/add-habit.png)
+
+### 📅 Weekly Calendar View
+
+![Calendar View](./screenshots/CalenderView.png)
+
+### 🌙 Dark Mode
+
+![Dark Mode](./screenshots/Darkmode.png)
+
+### Details
+
+![Details](./screenshots/Detailspage.png)
 
 ---
 
 ## 👨‍💻 Author
 
 **Utkal Behera**
-[LinkedIn](https://linkedin.com/in/your-link)
-
----
-
-## 📜 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
-```
-
----
-
-Let me know if you want this customized for **your GitHub profile link**, screenshots, or if you’re integrating **React or MERN later** — I’ll adjust the README accordingly.
-```
+[LinkedIn](https://www.linkedin.com/in/utkal-behera59/)
