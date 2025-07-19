@@ -1,9 +1,10 @@
 const Habit = require("../models/habits");
-// homepage controller
+
+// GET /
 module.exports.home = function (req, res) {
-    Habit.find({}, function (err, habits) {
+    Habit.find({ user: req.session.user._id }, function (err, habits) {
         if (err) {
-            Console.log("Error in fetching the habits");
+            console.log("Error in fetching habits");
             return;
         }
         return res.render("home", {
@@ -12,7 +13,8 @@ module.exports.home = function (req, res) {
         });
     });
 };
-// controller to create a habit
+
+// POST /create-habit
 module.exports.createHabit = function (req, res) {
     let days = {
         one: "none",
@@ -32,6 +34,7 @@ module.exports.createHabit = function (req, res) {
             date: Date(),
             time: req.body.time,
             days: days,
+            user: req.session.user._id, // associate with logged-in user
         },
         function (err, newHabit) {
             if (err) {
@@ -42,14 +45,18 @@ module.exports.createHabit = function (req, res) {
         }
     );
 };
-// controller to delete a habit
+
+// GET /delete-habit
 module.exports.deleteHabit = function (req, res) {
     let id = req.query.id;
-    Habit.findByIdAndDelete(id, function (err) {
-        if (err) {
-            console.log("Error in deleting Habit");
-            return;
+    Habit.findOneAndDelete(
+        { _id: id, user: req.session.user._id },
+        function (err) {
+            if (err) {
+                console.log("Error in deleting habit");
+                return;
+            }
+            return res.redirect("back");
         }
-        return res.redirect("back");
-    });
+    );
 };
